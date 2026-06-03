@@ -18,28 +18,33 @@ def main():
 
         choice = input("Enter your choice: ")
 
-        if choice == "1":
-            title = input("Enter task title: ")
-            description = input("Enter task description: ")
-            due_date = input("Enter due date YYYY-MM-DD: ")
-            add_task(tasks, title, description, due_date)
+        try:
+            if choice == "1":
+                title = input("Enter task title: ")
+                description = input("Enter task description: ")
+                due_date = input("Enter due date YYYY-MM-DD: ")
 
-        elif choice == "2":
-            title = input("Enter the title of the task to complete: ")
-            mark_task_as_complete(tasks, title)
+                add_task(tasks, title, description, due_date)
 
-        elif choice == "3":
-            view_pending_tasks(tasks)
+            elif choice == "2":
+                title = input("Enter the title of the task to complete: ")
+                mark_task_as_complete(tasks, title)
 
-        elif choice == "4":
-            calculate_progress(tasks)
+            elif choice == "3":
+                view_pending_tasks(tasks)
 
-        elif choice == "5":
-            print("Goodbye!")
-            break
+            elif choice == "4":
+                calculate_progress(tasks)
 
-        else:
-            print("Invalid choice. Please try again.")
+            elif choice == "5":
+                print("Goodbye!")
+                break
+
+            else:
+                print("Invalid choice. Please try again.")
+
+        except ValueError as e:
+            print(e)
 
 if __name__ == "__main__":
     main()
