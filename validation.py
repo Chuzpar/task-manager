@@ -10,6 +10,10 @@ def validate_task_description(description):
         raise ValueError("Description cannot be empty")
     return True
 
+    if len(description) > 500:
+        raise ValueError("Description cannot exceed 500 characters")
+    return True
+
 def validate_due_date(due_date):
     try:
         datetime.strptime(due_date, "%Y-%m-%d")
