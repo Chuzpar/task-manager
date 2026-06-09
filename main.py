@@ -23,12 +23,11 @@ def main():
                 title = input("Enter task title: ")
                 description = input("Enter task description: ")
                 due_date = input("Enter due date YYYY-MM-DD: ")
-
                 add_task(tasks, title, description, due_date)
 
             elif choice == "2":
-                title = input("Enter the title of the task to complete: ")
-                mark_task_as_complete(tasks, title)
+                task_number = input("Enter the task number to complete: ")
+                mark_task_as_complete(tasks, task_number)
 
             elif choice == "3":
                 view_pending_tasks(tasks)
